@@ -29,7 +29,7 @@ function Sphere({ position }) {
     <ambientLight intensity={0.5}/>
     <spotLight position={[-10,10,1]} angle={0.3}/>
     <mesh position={ position} {...bindHover} onClick={e => console.log(e)}>
-      <sphereBufferGeometry args={[0.5, 30, 30]} attach="geometry" />
+      <sphereBufferGeometry args={[1.5, 30, 30]} attach="geometry" />
       <meshLambertMaterial attach="material" color={hovered ? 'black' : 'hotpink'}></meshLambertMaterial>
     </mesh>
     </>
@@ -42,9 +42,7 @@ function App() {
     <Canvas className="canvas">
       <OrbitControls />
       <Stars />
-      <Sphere position={[2,0,0]} />
       <Sphere position={[0,0,0]} />
-      <Sphere position={[-2,0,0]} />
     </Canvas>
   );
 }
