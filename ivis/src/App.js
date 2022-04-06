@@ -1,7 +1,7 @@
 import './style.css';
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useLoader } from '@react-three/fiber'
 import { OrbitControls, Stars } from '@react-three/drei'
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback} from 'react'
 
 function useHover(stopPropagation = true) {
   const [hovered, setHover] = useState(false)
@@ -21,8 +21,23 @@ function useHover(stopPropagation = true) {
   return [bind, hovered]
 }
 
-function Sphere({ position }) {
+function Sphere({ position}) {
   let [bindHover, hovered] = useHover(false)
+
+  const vs = `
+    varying vec3 v_Normal;
+
+    void main() {
+      gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+      v_Normal= normal;
+    }`
+  const fs = `
+  varying vec3 v_Normal;
+
+    void main() {
+      gl_FragColor = vec4(v_Normal, 1.0);
+  }`
+
 
   return (
     <>
@@ -30,7 +45,11 @@ function Sphere({ position }) {
     <spotLight position={[-10,10,1]} angle={0.3}/>
     <mesh position={ position} {...bindHover} onClick={e => console.log(e)}>
       <sphereBufferGeometry args={[1.5, 30, 30]} attach="geometry" />
-      <meshLambertMaterial attach="material" color={hovered ? 'black' : 'hotpink'}></meshLambertMaterial>
+      <shaderMaterial
+        attach="material"
+        vertexShader={vs}
+        fragmentShader={fs}/>
+      {/* <meshLambertMaterial attach="material" color={hovered ? 'black' : 'hotpink'}></meshLambertMaterial> */}
     </mesh>
     </>
   )
@@ -42,7 +61,7 @@ function App() {
     <Canvas className="canvas">
       <OrbitControls />
       <Stars />
-      <Sphere position={[0,0,0]} />
+      <Sphere position={[0,0,0]}/>
     </Canvas>
   );
 }
