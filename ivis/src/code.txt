@@ -1,0 +1,46 @@
+var geometry = new THREE.CylinderBufferGeometry(2, 5, 20, 32, 1, true);
+var material = new THREE.ShaderMaterial({
+  uniforms: {
+    color1: {
+      value: new THREE.Color("red")
+    },
+    color2: {
+      value: new THREE.Color("purple")
+    }
+  },
+  vertexShader: `
+    varying vec2 vUv;
+
+    void main() {
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
+    }
+  `,
+  fragmentShader: `
+    uniform vec3 color1;
+    uniform vec3 color2;
+  
+    varying vec2 vUv;
+    
+    void main() {
+      
+      gl_FragColor = vec4(mix(color1, color2, vUv.y), 1.0);
+    }
+  `,
+  wireframe: true
+});
+var mesh = new THREE.Mesh(geometry, material);
+scene.add(mesh);
+
+
+
+/* ---- Functions not used ----
+
+ function Box() {
+  return (
+    <mesh>
+      <boxBufferGeometry attach="geometry" ></boxBufferGeometry>
+      <meshLambertMaterial attach="material" color="hotpink"></meshLambertMaterial>
+    </mesh>
+  )
+} */
