@@ -1,8 +1,8 @@
 import './style.css';
-import { Canvas, useFrame} from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Stars } from '@react-three/drei'
 import React, { useRef } from "react";
-import earthImg from './world.jpg'
+import earthImg from './world_color.jpg'
 import * as THREE from "three";
 
 
@@ -12,7 +12,6 @@ function Sphere({ position}) {
   const base=new THREE.TextureLoader().load(earthImg)
   const ref=useRef()
 /*   useFrame(() => (ref.current.rotation.x=ref.current.rotation.y += 0.01)) */
-
 
   return (
     <>
