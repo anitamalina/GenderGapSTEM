@@ -1,18 +1,29 @@
 import './style.css';
-import { Canvas} from '@react-three/fiber'
+import { Canvas, useFrame} from '@react-three/fiber'
 import { OrbitControls, Stars } from '@react-three/drei'
-import React, { useState, useCallback } from 'react'
+import React, { useRef } from "react";
+import earthImg from './world.jpg'
+import * as THREE from "three";
+
+
 
 
 function Sphere({ position}) {
+  const base=new THREE.TextureLoader().load(earthImg)
+  const ref=useRef()
+/*   useFrame(() => (ref.current.rotation.x=ref.current.rotation.y += 0.01)) */
+
+
   return (
     <>
-    <ambientLight intensity={0.1}/>
-    <spotLight position={[-10,10,1]} angle={0.3}/>
-    <mesh position={ position} onClick={e => console.log(e)}>
-      <sphereBufferGeometry args={[1.5, 30, 30]} attach="geometry" />
-      {/* <meshLambertMaterial attach="material" color={hovered ? 'black' : 'hotpink'}></meshLambertMaterial> */}
-    </mesh>
+      <mesh visible castShadow ref={ref}>
+      <directionalLight intensity={0.5} />
+      <sphereGeometry attach="geometry" args={[2, 32, 32]} />
+      <meshBasicMaterial
+         map={base}
+         color="white"
+      />
+      </mesh>
     </>
   )
 }
