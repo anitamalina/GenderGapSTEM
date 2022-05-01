@@ -63,7 +63,7 @@ h1 {
   text-align: center;
 }
 
-p {
+.timer {
   position: absolute;
   color: white;
   margin-left: auto;
@@ -76,4 +76,29 @@ p {
   letter-spacing: 0em;
   text-align: center;
   top: 91.5%;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+.genderInfo {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 20px;
+  top: 30%;
+  left: 10%;
+}
+
+.genderText {
+font-size: 25px;
+font-weight: 500;
+line-height: 48px;
+letter-spacing: 0em;
+text-transform: capitalize;
 }
