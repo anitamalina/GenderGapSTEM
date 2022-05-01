@@ -5,7 +5,6 @@ import data from "./../data.json";
 import FlowBtn from "./FlowBtn";
 
 export default function ControlBoard1() {
-  let genderData = data;
 
   function action() {
       return null;
@@ -15,7 +14,7 @@ export default function ControlBoard1() {
     <div className="controlboard">
       <h3>What gender are you assigned to at ITU?</h3>
       <div className="genderLabels">
-        {genderData.map((g) => (
+        {data.map((g) => (
           <div className="genderText" key={g.id}>
             <GenderLabels
               genderText={g.genderText}

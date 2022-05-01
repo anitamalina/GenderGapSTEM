@@ -15,8 +15,6 @@ import data from "./data.json"
 function App() {
   const [src, setSrc] = useState();
   const [timer, setTimer] = useState();
-  
-  let genderData = data
 
   function goToPage() {
     return null;
@@ -28,7 +26,7 @@ function App() {
     <Timer setTimer={setTimer}/>
     <h1>Student Representation</h1>
     <div className="genderInfo">
-      {genderData.map((g) => (
+      {data.map((g) => (
         <div className="genderText">
         <GenderInfo genderText={g.genderText} genderPercent={g.genderPercent + ' %'} genderColor={g.genderColor} />
         </div>
