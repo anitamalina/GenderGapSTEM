@@ -24,24 +24,56 @@ code {
 }
 
 .updateGenderBtn {
-  position: absolute;
-  left: 37.6%;
-  top: 85%;
+  position:absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 83%;
   color: white;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 23px;
   letter-spacing: 0em;
   text-align: center;
-  height: 54px;
-  width: 325px;
+  height: 76px;
+  width: 277px;
   border: none;
   background-color: rgba(196, 196, 196, 0.3);
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 15px;
+  padding-left: 15px;
   border-radius: 20px;
   transition: 0.3s;
   cursor: pointer;
   z-index: 98;
-  height: 82px;
+}
+
+h1 {
+  position: absolute;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+p {
+  position: absolute;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: center;
+  top: 91.5%;
 }
