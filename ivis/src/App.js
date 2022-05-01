@@ -22,7 +22,7 @@ function App() {
       
   return (
     <>
-    <ControlBoard1/>
+{/*     <ControlBoard1/> */}
     <Timer setTimer={setTimer}/>
     <h1>Student Representation</h1>
     <div className="genderInfo">
