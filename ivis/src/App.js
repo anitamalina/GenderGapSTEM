@@ -8,7 +8,6 @@ import Sphere from "./Sphere";
 
 function App() {
   const [src, setSrc] = useState();
-  const [isHidden, setHidden] = useState(false);
       
   return (
     <>
