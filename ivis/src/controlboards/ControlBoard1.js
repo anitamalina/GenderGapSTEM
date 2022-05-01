@@ -7,6 +7,10 @@ import FlowBtn from "./FlowBtn";
 export default function ControlBoard1() {
   let genderData = data;
 
+  function action() {
+      return null;
+  }
+
   return (
     <div className="controlboard">
       <h3>What gender are you assigned to at ITU?</h3>
@@ -21,7 +25,7 @@ export default function ControlBoard1() {
         ))}
       </div>
       <div className="flowNav">
-      <FlowBtn txt="Next"/>
+      <FlowBtn txt="Next" action={action}/>
       </div>
     </div>
   );

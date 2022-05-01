@@ -1,4 +1,3 @@
-import react from "react"
 import './../myStyle.css'
 
 export default function flowBtn({txt, action}) {
