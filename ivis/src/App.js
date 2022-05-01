@@ -1,40 +1,37 @@
 import './style.css';
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Stars } from '@react-three/drei'
-import React, { useRef } from "react";
-import earthImg from './world_color.jpg'
-import * as THREE from "three";
+import React, { useState} from "react";
+/* import earthImg from './world_color.jpg' */
+/* import mySketch from './untitled.myCanvas' */
+
+import Sketch from './Sketch';
+import Sphere from './Sphere';
 
 
 
 
-function Sphere({ position}) {
-  const base=new THREE.TextureLoader().load(earthImg)
-  const ref=useRef()
-/*   useFrame(() => (ref.current.rotation.x=ref.current.rotation.y += 0.01)) */
+/* async function getSketch(props) {
+  const loader = new THREE.TextureLoader()
+  let sketch = loader.load(<Sketch setup={props.setup} draw={props.draw} />)
+  console.log("sketch console", sketch)
+  return sketch
+} */
+
+function App() {
+
+  const [img, setImg] = useState()
+  
 
   return (
     <>
-      <mesh visible castShadow ref={ref}>
-      <directionalLight intensity={0.5} />
-      <sphereGeometry attach="geometry" args={[2, 32, 32]} />
-      <meshBasicMaterial
-         map={base}
-         color="white"
-      />
-      </mesh>
-    </>
-  )
-}
-
-
-function App() {
-  return (
+    <Sketch setImg={setImg} />
     <Canvas className="canvas">
       <OrbitControls />
       <Stars />
-      <Sphere position={[0,0,0]}/>
+      <Sphere img={img}/>
     </Canvas>
+    </>
   );
 }
 
