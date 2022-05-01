@@ -1,18 +1,20 @@
 import "./myStyle.css";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Visuals from "./Visuals";
 
 import Sphere from "./Sphere";
 
 function App() {
   const [src, setSrc] = useState();
+  const [isHidden, setHidden] = useState(false);
       
-
   return (
     <>
-    <Visuals setSrc={setSrc}/>s
+    <div className="p5-sketch">
+    <Visuals setSrc={setSrc}/>
+    </div>
     <Canvas className="canvas">
       <OrbitControls />
       <Stars />

@@ -1,8 +1,8 @@
 import React from "react";
 import Sketch from "react-p5";
 
-
 export default function Visuals({setSrc}) {
+
   const setup = (p5, canvasParentRef, canvas) => {
     // use parent to render the canvas in this ref
     // (without that p5 will render the canvas outside of your component)
@@ -29,7 +29,7 @@ export default function Visuals({setSrc}) {
     
     const imgSrc = p5.canvas.toDataURL();
     setSrc(imgSrc);
-    p5.hide();
+    p5.canvas.hide();
   }
   return <Sketch setup={setup} draw={draw}/>;
 };
