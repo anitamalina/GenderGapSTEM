@@ -63,6 +63,20 @@ h1 {
   text-align: center;
 }
 
+h3 {
+  color: white;
+  width: 277px;
+  height: 80px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
 .timer {
   position: absolute;
   color: white;
@@ -82,8 +96,7 @@ h1 {
    -khtml-user-select: none; /* Konqueror HTML */
      -moz-user-select: none; /* Old versions of Firefox */
       -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none; /* Non-prefixed version, currently
-                                supported by Chrome, Edge, Opera and Firefox */
+          user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
 .genderInfo {
@@ -109,7 +122,75 @@ text-transform: capitalize;
   height: 635px; 
   left: 28px;
   top: 39px; 
-  background-color: #2D2D2D;
+  background-color: rgba(45, 45, 45, 1);
   border-radius: 10px;
+  z-index: 101;
+}
 
+.genderLabels {
+  height: 410px;
+  padding-left: 20px;
+}
+
+.genderlabel {
+  display: flex;
+  align-items: center;
+  width: 259px;
+  height: 50px;
+}
+
+.genderlabel:hover {
+  display: flex;
+  align-items: center;
+  background: rgba(196, 196, 196, 0.35);
+  border-radius: 42px;
+  width: 259px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.circle {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.labeltext {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  color: white;
+}
+
+.flowBtn {
+  background-color: rgba(196, 196, 196, 0.2);
+  border-radius: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 170px;
+  height: 50px;
+  justify-content: center;
+  border: none;
+}
+
+.flowBtnTxt {
+  color:black;
+}
+
+.flowNav {
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }

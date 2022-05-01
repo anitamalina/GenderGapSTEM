@@ -2,19 +2,21 @@ import "./myStyle.css";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
 import React, { useState } from "react";
+
+// components
 import Visuals from "./Visuals";
 import Timer from "./Timer";
 import GenderInfo from "./GenderInfo";
-
 import Sphere from "./Sphere";
 import UpdateGenderBtn from "./UpdateGenderBtn";
 import ControlBoard1 from "./controlboards/ControlBoard1";
+import data from "./data.json"
 
 function App() {
   const [src, setSrc] = useState();
   const [timer, setTimer] = useState();
-
-  let genderInfo = [ {genderText: "female", genderPercent: 40.2, genderColor: "#77F2FC"}, {genderText: "male", genderPercent: 59.8, genderColor: "#C897F9"}]
+  
+  let genderData = data
 
   function goToPage() {
     return null;
@@ -26,7 +28,7 @@ function App() {
     <Timer setTimer={setTimer}/>
     <h1>Student Representation</h1>
     <div className="genderInfo">
-      {genderInfo.map((g) => (
+      {genderData.map((g) => (
         <div className="genderText">
         <GenderInfo genderText={g.genderText} genderPercent={g.genderPercent + ' %'} genderColor={g.genderColor} />
         </div>
