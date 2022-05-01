@@ -17,6 +17,7 @@ function App() {
     <Canvas className="canvas">
       <OrbitControls />
       <Stars />
+      
       <Sphere position={[0, 0, 0]} src={src}/>
     </Canvas>
     </>
