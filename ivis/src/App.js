@@ -8,6 +8,7 @@ import GenderInfo from "./GenderInfo";
 
 import Sphere from "./Sphere";
 import UpdateGenderBtn from "./UpdateGenderBtn";
+import ControlBoard1 from "./controlboards/ControlBoard1";
 
 function App() {
   const [src, setSrc] = useState();
@@ -21,6 +22,7 @@ function App() {
       
   return (
     <>
+    <ControlBoard1/>
     <Timer setTimer={setTimer}/>
     <h1>Student Representation</h1>
     <div className="genderInfo">
@@ -35,7 +37,6 @@ function App() {
       <div className="p5-sketch">
         <Visuals setSrc={setSrc}/>
       </div>
-      
     <Canvas className="canvas" >
       <OrbitControls />
       <Stars />

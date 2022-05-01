@@ -102,3 +102,14 @@ line-height: 48px;
 letter-spacing: 0em;
 text-transform: capitalize;
 }
+
+.controlboard {
+  position: absolute;
+  width: 300px;
+  height: 635px; 
+  left: 28px;
+  top: 39px; 
+  background-color: #2D2D2D;
+  border-radius: 10px;
+
+}
