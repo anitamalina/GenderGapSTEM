@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './myStyle.css';
 import App from './App';
-import Sketch from './Sketch';
+import Visuals from './Visuals';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Sketch />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

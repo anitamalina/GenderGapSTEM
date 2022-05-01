@@ -1,25 +1,24 @@
-import './myStyle.css';
-import {Canvas} from "@react-three/fiber";
-import {OrbitControls, Stars} from "@react-three/drei";
+import "./myStyle.css";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Stars } from "@react-three/drei";
+import React, { useEffect, useState } from "react";
+import Visuals from "./Visuals";
 
-function Box(){
-  return (
-    <mesh>
-      <boxBufferGeometry attach="geometry"/>
-      <meshLambertMaterial attach="material" color="hotpink"/>
-    </mesh>
-  )
-}
+import Sphere from "./Sphere";
 
 function App() {
+  const [src, setSrc] = useState();
+      
+
   return (
-    <Canvas className='canvas'>
-      <OrbitControls/>
-      <Stars/>
-      <ambientLight intensity={0.5}/>
-      <spotLight angle={0.3} position={[10,15,10]}/>
-      <Box/>
+    <>
+    <Visuals setSrc={setSrc}/>s
+    <Canvas className="canvas">
+      <OrbitControls />
+      <Stars />
+      <Sphere position={[0, 0, 0]} src={src}/>
     </Canvas>
+    </>
   );
 }
 
