@@ -45,6 +45,6 @@ code {
   border-radius: 20px;
   transition: 0.3s;
   cursor: pointer;
-  z-index: 100;
+  z-index: 98;
   height: 82px;
 }
