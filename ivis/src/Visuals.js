@@ -4,13 +4,14 @@ import Sketch from "react-p5";
 export default function Visuals({setSrc}) {
 
   const setup = (p5, canvasParentRef, canvas) => {
-    // use parent to render the canvas in this ref
-    // (without that p5 will render the canvas outside of your component)
     p5.createCanvas(600, 400).parent(canvasParentRef);
   };
 
   const draw = (p5) => {
     p5.background(220);
+    /* let gradient = p5.drawingContext.createLinearGradient((600/2-200), (400/2-200), (600/2+200), (400/2+200));
+    p5.drawingContext.fillStyle = gradient; */
+    
     let numbersOfGenders = [25, 50];
     for (let i = 0; i < numbersOfGenders.length; i++) {
       let rect_height = (400 * numbersOfGenders[i]) / 100;

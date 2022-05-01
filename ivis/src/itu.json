@@ -1,0 +1,45 @@
+[{
+    "year": 2020, 
+    "study-program": [{
+        "id": 1,
+        "name": "BDDIT", 
+        "genders": [{"description": "male", "percentage": 50}, {"description": "female", "percentage": 50}]
+    }, {
+        "id": 2,
+        "name": "BDS", 
+        "genders": [{"description": "male", "percentage": 50}, {"description": "female", "percentage": 50}]
+    }, {
+        "id": 3,
+        "name": "BSWU", 
+        "genders": [{"description": "male", "percentage": 50}, {"description": "female", "percentage": 50}]
+    }, {
+        "id": 4,
+        "name": "KSC", 
+        "genders": [{"description": "male", "percentage": 50}, {"description": "female", "percentage": 50}]
+    }, {
+        "id": 5,
+        "name": "KDDIT", 
+        "genders": [{"description": "male", "percentage": 50}, {"description": "female", "percentage": 50}]
+    }, {
+        "id": 6,
+        "name": "KDIM", 
+        "genders": [{"description": "male", "percentage": 50}, {"description": "female", "percentage": 50}]
+    }, {
+        "id": 7,
+        "name": "KDS", 
+        "genders": [{"description": "male", "percentage": 50}, {"description": "female", "percentage": 50}]
+    }, {
+        "id": 8,
+        "name": "BDDIT", 
+        "genders": [{"description": "male", "percentage": 50}, {"description": "female", "percentage": 50}]
+    }, {
+        "id": 9,
+        "name": "KGAMES", 
+        "genders": [{"description": "male", "percentage": 50}, {"description": "female", "percentage": 50}]
+    }, {
+        "id": 10,
+        "name": "KSD", 
+        "genders": [{"description": "male", "percentage": 50}, {"description": "female", "percentage": 50}]
+    }
+]
+}]
