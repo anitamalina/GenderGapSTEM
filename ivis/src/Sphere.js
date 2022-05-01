@@ -1,9 +1,6 @@
 import "./myStyle.css";
-import React, { useRef, useEffect, useState } from "react";
-import Visuals from "./Visuals";
+import React, { useRef } from "react";
 import * as THREE from "three";
-import map from "./map.jpg";
-import Sketch from "react-p5";
 
 
 export default function Sphere({src, setSrc}) {
@@ -22,7 +19,3 @@ export default function Sphere({src, setSrc}) {
     </>
   );
 }
-
-
-
-
