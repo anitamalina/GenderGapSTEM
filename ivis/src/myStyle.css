@@ -2,9 +2,7 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black; 
@@ -30,7 +28,6 @@ code {
   left: 37.6%;
   top: 85%;
   color: white;
-  font-family: 'Inter', sans-serif;
   font-size: 17px;
   font-weight: 700;
   line-height: 23px;
