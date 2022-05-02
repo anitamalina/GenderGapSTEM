@@ -1,34 +1,18 @@
-import "./myStyle.css";
+import "./../myStyle.css"
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
 import React, { useState } from "react";
 
+
 // components
-import Visuals from "./Visuals";
-import Sphere from "./Sphere";
-import ControlBoard from "../components/update-gender-components/ControlBoard";
-import ThankYou from "../components/update-gender-components/ThankYou";
-import data from "./data.json"
+import Visuals from "../components/Visuals";
+import Sphere from "../components/Sphere";
 
-
-function App() {
+export default function UpdateGenderFlow() {
   const [src, setSrc] = useState();
-
-  function goToPage() {
-    return null;
-  }
       
   return (
     <>
-    <div className="genderInfo">
-      {data.map((g) => (
-        <div className="genderText">
-        <GenderInfo genderText={g.genderText} genderPercent={g.genderPercent + ' %'} genderColor={g.genderColor} />
-        </div>
-      ))}
-    </div>
-    <UpdateGenderBtn action={goToPage}/>
-    <p className="timer">{timer}</p>
       <div className="p5-sketch">
         <Visuals setSrc={setSrc}/>
       </div>
@@ -40,5 +24,3 @@ function App() {
     </>
   );
 }
-
-export default App;
