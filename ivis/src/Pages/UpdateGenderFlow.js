@@ -5,15 +5,14 @@ import React, { useState } from "react";
 
 // components
 import Visuals from "./Visuals";
-import Timer from "./Timer";
-import GenderInfo from "./GenderInfo";
 import Sphere from "./Sphere";
-import UpdateGenderBtn from "./UpdateGenderBtn";
+import ControlBoard from "../update-gender-components/ControlBoard";
+import ThankYou from "../update-gender-components/ThankYou";
 import data from "./data.json"
+
 
 function App() {
   const [src, setSrc] = useState();
-  const [timer, setTimer] = useState();
 
   function goToPage() {
     return null;
@@ -21,8 +20,6 @@ function App() {
       
   return (
     <>
-    <Timer setTimer={setTimer}/>
-    <h1>Student Representation</h1>
     <div className="genderInfo">
       {data.map((g) => (
         <div className="genderText">
