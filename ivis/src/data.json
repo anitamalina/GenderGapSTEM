@@ -1,0 +1,4 @@
+[
+  { "id": "1", "genderText": "female", "genderPercent": 40.2, "genderColor": "#77F2FC" },
+  { "id": "2", "genderText": "male", "genderPercent": 59.8, "genderColor": "#C897F9" }
+]

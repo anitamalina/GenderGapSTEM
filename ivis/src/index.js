@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './myStyle.css';
 import App from './App';
-import Visuals from './Visuals';
 
 
 ReactDOM.render(
