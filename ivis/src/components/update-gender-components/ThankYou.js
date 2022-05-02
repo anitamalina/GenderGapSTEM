@@ -1,5 +1,5 @@
 import React from "react";
-import "./../myStyle.css";
+import "./../../myStyle.css"
 import FlowBtn from "./FlowBtn";
 import image from "./../images/checkmark.png"
 

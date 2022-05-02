@@ -13,15 +13,13 @@ import Visuals from "../components/Visuals"
 import data from "./../data.json"
 
 
-export default function Home() {
+export default function Home(props) {
 
-    const [src, setSrc] = useState();
     const [timer, setTimer] = useState();
 
     const navigate = useNavigate();
 
     function goToPage() {
-      console.log("buton clicked!!!")
       navigate("/update-gender")
     }
 
@@ -39,12 +37,12 @@ export default function Home() {
     <UpdateGenderBtn updateGenderAction={goToPage}/>
     <p className="timer">{timer}</p>
       <div className="p5-sketch">
-        <Visuals setSrc={setSrc}/>
+        <Visuals setSrc={props.setSrc}/>
       </div>
     <Canvas className="canvas" >
       <OrbitControls />
       <Stars />
-      <Sphere position={[0, 0, 0]} src={src}/>
+      <Sphere position={[0, 0, 0]} src={props.src}/>
     </Canvas>
         </>
     )

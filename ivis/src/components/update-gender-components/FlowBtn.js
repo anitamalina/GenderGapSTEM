@@ -1,10 +1,18 @@
 import React from "react";
-import './../myStyle.css'
+import "./../../myStyle.css"
 
-export default function FlowBtn({flowBtnTxt, flowBtnAction}) {
+export default function FlowBtn({flowBtnTxt, flowBtnAction, isActive}) {
     return (
-        <button className="flowBtn" onClick={flowBtnAction}>
-        <p className="flowBtnTxt">{flowBtnTxt}</p>
-        </button>
+        <>
+        {!isActive ? 
+            <button className="flowBtn" onClick={flowBtnAction}>
+                <p className="flowBtnTxt">{flowBtnTxt}</p>
+            </button>
+            : 
+            <button className="flowBtn-selected" onClick={flowBtnAction}>
+                <p className="flowBtnTxt">{flowBtnTxt}</p>
+            </button>
+        }
+        </>
     )
 }

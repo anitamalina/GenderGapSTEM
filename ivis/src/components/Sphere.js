@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import * as THREE from "three";
 
 
-export default function Sphere({src, setSrc}) {
+export default function Sphere({src}) {
 
   const base = new THREE.TextureLoader().load(src);
   const ref = useRef();

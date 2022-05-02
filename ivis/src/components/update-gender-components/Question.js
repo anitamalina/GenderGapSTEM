@@ -1,4 +1,5 @@
-import './../myStyle.css'
+import React from "react"
+import "./../../myStyle.css"
 
 export default function flowBtn({questionTxt}) {
     return (

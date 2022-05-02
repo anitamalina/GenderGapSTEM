@@ -1,14 +1,33 @@
 import React from "react";
+import GenderLabel from "./GenderLabel";
+import GenderRadioBtn from "./GenderRadioBtn";
 
-// Styles
-import './../myStyle.css';
+import data from "./../../data.json"
 
 
-const GenderLabels = ({ genderText, genderColor }) => {
-  return <div className="genderlabel">
-      <span style={{ backgroundColor: genderColor }} class="circle"></span>
-      <p className="labeltext">{genderText}</p>
-      </div>;
-  }
+export default function GenderLabels({setAssignedGender, assignedGender, setIsActive, isActive}) {
 
-export default GenderLabels;
+    return(
+      <>
+        <div className="genderLabels">
+          {data.map((g) => (
+            <div className="genderText" key={g.id}>
+              <GenderRadioBtn
+                genderText={g.genderText}
+                genderColor={g.genderColor}
+                assignedGender={assignedGender}
+                setAssignedGender={setAssignedGender}
+                setIsActive={setIsActive}
+                isActive={isActive}
+              />
+            </div>
+          ))}
+        </div> 
+      </>
+    )
+}
+/*               setAssignedGender(g.genderText)
+              setIsActive(false);
+              console.log("clicked")
+              console.log("active?", isActive)
+              console.log("gender?", g.genderText) */

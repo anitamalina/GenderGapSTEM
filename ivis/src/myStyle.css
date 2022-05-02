@@ -171,6 +171,59 @@ text-transform: capitalize;
   align-items: center;
   width: 259px;
   height: 50px;
+  z-index: 102;
+  cursor: pointer;
+}
+
+.genderRadioBtn {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 230px;
+  height: 50px;
+  z-index: 102;
+  cursor: pointer;
+}
+
+.genderRadioBtn-selected {
+  display: flex;
+  align-items: center;
+  background: rgba(196, 196, 196, 0.35);
+  border-radius: 42px;
+  width: 259px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 102;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.genderRadioBtn:checked:after {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 230px;
+  height: 50px;
+  z-index: 102;
+  cursor: pointer;
+  background: rgba(196, 196, 196, 0.35);
 }
 
 .genderlabel:hover {
@@ -181,17 +234,29 @@ text-transform: capitalize;
   width: 259px;
   height: 50px;
   cursor: pointer;
+  z-index: 102;
+}
+
+.genderlabel-selected {
+  display: flex;
+  align-items: center;
+  background: rgba(196, 196, 196, 0.35);
+  border-radius: 42px;
+  width: 259px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 102;
 }
 
 .circle {
-    height: 36px;
-    width: 36px;
+    height: 35px;
+    width: 35px;
     border-radius: 50%;
     display: inline-block;
     margin-left: 8px;
 }
 
-.labeltext {
+/* .labeltext {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -200,10 +265,26 @@ text-transform: capitalize;
   align-items: center;
   padding-left: 10px;
   color: white;
-}
+} */
 
 .flowBtn {
   background-color: rgba(196, 196, 196, 0.2);
+  border-radius: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 170px;
+  height: 50px;
+  justify-content: center;
+  border: none;
+}
+
+.flowBtn-selected {
+  background-color: rgba(196, 196, 196, 1);
   border-radius: 20px;
   font-style: normal;
   font-weight: 500;

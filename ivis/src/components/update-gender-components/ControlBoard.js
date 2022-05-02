@@ -1,30 +1,23 @@
-import React from "react";
-import GenderLabels from "./GenderLabels";
+import React, {useState} from "react";
 import FlowBtn from "./FlowBtn";
 import Question from "./Question"
 
-import "./../myStyle.css";
+import "./../../myStyle.css"
+import GenderLabels from "./GenderLabels";
 
 // import data from "./../data.json"
 // data is an array from the database which consist of an object with genderText, genderColor and id
 
 
-export default function ControlBoard({questionTxt, flowBtnAction, data}) {
+export default function ControlBoard({questionTxt, flowBtnAction, flowBtnTxt, assignedGender, setAssignedGender}) {
+  const [isActive, setIsActive] = useState(false);
+  
   return (
     <div className="controlboard">
       <Question questionTxt={questionTxt}/>
-      <div className="genderLabels">
-        {data.map((g) => (
-          <div className="genderText" key={g.id}>
-            <GenderLabels
-              genderText={g.genderText}
-              genderColor={g.genderColor}
-            />
-          </div>
-        ))}
-      </div>
+      <GenderLabels setAssignedGender={setAssignedGender} assignedGender={assignedGender} isActive={isActive} setIsActive={setIsActive}/>
       <div className="flowNav">
-      <FlowBtn txt="Next" flowBtnAction={flowBtnAction}/>
+      <FlowBtn flowBtnTxt={flowBtnTxt} flowBtnAction={flowBtnAction} isActive={isActive}/>
       </div>
     </div>
   );
