@@ -3,11 +3,7 @@ import "./../myStyle.css";
 import FlowBtn from "./FlowBtn";
 import image from "./../images/checkmark.png"
 
-export default function ThankYou() {
-
-  function action() {
-      return null;
-  }
+export default function ThankYou({flowBtnAction}) {
 
   return (
     <div className="thankyou">
@@ -16,7 +12,7 @@ export default function ThankYou() {
       <h5>Your registration is saved</h5>
       <p>You can now see your gender represented in the visualization.</p>
       <div className="flowNav">
-      <FlowBtn txt="OK" action={action}/>
+      <FlowBtn flowBtnTxt="OK" flowBtnAction={flowBtnAction}/>
       </div>
     </div>
   );

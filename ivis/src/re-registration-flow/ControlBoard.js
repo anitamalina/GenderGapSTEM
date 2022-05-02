@@ -1,18 +1,18 @@
 import React from "react";
-import "./../myStyle.css";
 import GenderLabels from "./GenderLabels";
-import data from "../data.json";
 import FlowBtn from "./FlowBtn";
+import Question from "./Question"
 
-export default function ControlBoard2() {
+import "./../myStyle.css";
 
-  function action() {
-      return null;
-  }
+// import data from "./../data.json"
+// data is an array from the database which consist of an object with genderText, genderColor and id
 
+
+export default function ControlBoard({questionTxt, flowBtnAction, data}) {
   return (
     <div className="controlboard">
-      <h3>What gender do you want to be assigned to at ITU?</h3>
+      <Question questionTxt={questionTxt}/>
       <div className="genderLabels">
         {data.map((g) => (
           <div className="genderText" key={g.id}>
@@ -24,7 +24,7 @@ export default function ControlBoard2() {
         ))}
       </div>
       <div className="flowNav">
-      <FlowBtn txt="Make" action={action}/>
+      <FlowBtn txt="Next" flowBtnAction={flowBtnAction}/>
       </div>
     </div>
   );

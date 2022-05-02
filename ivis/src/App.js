@@ -9,10 +9,9 @@ import Timer from "./Timer";
 import GenderInfo from "./GenderInfo";
 import Sphere from "./Sphere";
 import UpdateGenderBtn from "./UpdateGenderBtn";
-import ControlBoard1 from "./controlboards/ControlBoard1";
-import ControlBoard2 from "./controlboards/ControlBoard2";
+import ControlBoard from "./re-registration-flow/ControlBoard";
 import data from "./data.json"
-import ThankYou from "./controlboards/ThankYou";
+import ThankYou from "./re-registration-flow/ThankYou";
 
 function App() {
   const [src, setSrc] = useState();
@@ -24,8 +23,7 @@ function App() {
       
   return (
     <>
-{/*     <ControlBoard1/> */}
-{/*     <ControlBoard2/> */}
+{/*     <ControlBoard/> */}
     <ThankYou/>
     <Timer setTimer={setTimer}/>
     <h1>Student Representation</h1>

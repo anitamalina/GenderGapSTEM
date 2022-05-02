@@ -3,6 +3,7 @@ import React from "react";
 // Styles
 import './../myStyle.css';
 
+
 const GenderLabels = ({ genderText, genderColor }) => {
   return <div className="genderlabel">
       <span style={{ backgroundColor: genderColor }} class="circle"></span>
