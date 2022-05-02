@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
+import { useNavigate } from "react-router-dom";
 
 // components
 import Sphere from "../components/Sphere";
@@ -17,15 +18,16 @@ export default function Home() {
     const [src, setSrc] = useState();
     const [timer, setTimer] = useState();
 
+    const navigate = useNavigate();
 
-
-  function goToPage() {
-    return null;
-  }
+    function goToPage() {
+      console.log("buton clicked!!!")
+      navigate("/update-gender")
+    }
 
     return (
         <>
-            <Timer setTimer={setTimer}/>
+    <Timer setTimer={setTimer}/>
     <h1>Student Representation</h1>
     <div className="genderInfo">
       {data.map((g) => (
@@ -34,7 +36,7 @@ export default function Home() {
         </div>
       ))}
     </div>
-    <UpdateGenderBtn action={goToPage}/>
+    <UpdateGenderBtn updateGenderAction={goToPage}/>
     <p className="timer">{timer}</p>
       <div className="p5-sketch">
         <Visuals setSrc={setSrc}/>
