@@ -1,4 +1,4 @@
-import "./myStyle.css";
+import "./../myStyle.css";
 import React, { useRef } from "react";
 import * as THREE from "three";
 

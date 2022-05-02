@@ -1,25 +1,32 @@
-import "./myStyle.css";
+import React, {useState} from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
-import React, { useState } from "react";
 
 // components
-import Visuals from "./Visuals";
-import Sphere from "./Sphere";
-import ControlBoard from "../components/update-gender-components/ControlBoard";
-import ThankYou from "../components/update-gender-components/ThankYou";
-import data from "./data.json"
+import Sphere from "../components/Sphere";
+import Timer from "../components/Timer"
+import GenderInfo from "../components/GenderInfo"
+import UpdateGenderBtn from "../components/UpdateGenderBtn"
+import Visuals from "../components/Visuals"
+
+import data from "./../data.json"
 
 
-function App() {
-  const [src, setSrc] = useState();
+export default function Home() {
+
+    const [src, setSrc] = useState();
+    const [timer, setTimer] = useState();
+
+
 
   function goToPage() {
     return null;
   }
-      
-  return (
-    <>
+
+    return (
+        <>
+            <Timer setTimer={setTimer}/>
+    <h1>Student Representation</h1>
     <div className="genderInfo">
       {data.map((g) => (
         <div className="genderText">
@@ -37,8 +44,6 @@ function App() {
       <Stars />
       <Sphere position={[0, 0, 0]} src={src}/>
     </Canvas>
-    </>
-  );
+        </>
+    )
 }
-
-export default App;
