@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
-
-// parse function
-import { getGenderRep } from "../parse";
+import Parse from "parse";
 
 // components
 import Sphere from "../components/Sphere";
@@ -17,14 +15,106 @@ import data from "./../data.json";
 export default function Home() {
   const [src, setSrc] = useState();
   const [timer, setTimer] = useState();
-  const [parseData, setParseData] = useState([]);
+  const [parseData, setParseData] = useState();
+
+  const gender_id = "34gnzcE46z";
+  let genderHope = [];
 
   useEffect(() => {
     getGenderRep();
+    console.log("1) from home component: ", parseData);
   }, []);
+
+   useEffect(() => {
+    genderTest(gender_id);
+  }, []);
+
+  useEffect(() => {
+    getGenderDetails();
+  }, []);
+
+
+
 
   function goToPage() {
     return null;
+  }
+
+  async function getGenderRep() {
+    let genderArray = [];
+    const genders = Parse.Object.extend("gender_itu");
+    const query = new Parse.Query(genders);
+
+    try {
+      let genderResult = await query.find();
+
+      genderResult.forEach((gender) => {
+        genderArray.push(gender);
+      });
+      
+      console.log(genderArray);
+      //const destructuredArray = destructureGenderArray(gender);
+      let destructuredArray = destructureGenderArray(genderArray);
+      setParseData(destructuredArray);
+      return true;
+    } catch (error) {}
+  }
+
+  async function getGenderDetails(){
+    const genderNew = Parse.Object.extend("gender_itu");
+    const query = new Parse.Query(genderNew);
+    
+
+    try{
+
+      let genderTest = await query.find();
+      let description;
+      let color; 
+      let admitted;
+
+      genderTest.forEach((gender) => {
+        let object = 
+        description = gender.get("gender_description");
+        color = gender.get("color");
+        admitted= gender.get("admitted");
+        genderHope.push(description, color, admitted);
+      });
+      console.log("is here hope?: "+ genderHope);
+    
+  }catch(error){
+
+  }
+  }
+
+  async function genderTest(id){
+
+    let genderArray;
+
+    const genders = Parse.Object.extend("gender_itu");
+    const query = new Parse.Query(genders);
+
+    try{
+      const gender = await query.get(id);
+      const description = gender.get("gender_description");
+      console.log(description)
+
+    } catch(error){
+
+    }
+
+  }
+
+  function destructure(gender) {
+    let genderObject = {
+      "description": gender.get("gender_description"),
+      "admitted": gender.get("admitted"),
+      "color": gender.get("color")
+    }
+    return genderObject;
+  }
+
+  function destructureGenderArray(genderArray) {
+    genderArray.map(destructure);
   }
 
   return (
@@ -32,12 +122,12 @@ export default function Home() {
       <Timer setTimer={setTimer} />
       <h1>Student Representation</h1>
       <div className="genderInfo">
-        {data.map((g) => (
+        {genderHope.map((g) => (
           <div className="genderText">
             <GenderInfo
-              genderText={g.genderText}
-              genderPercent={g.genderPercent + " %"}
-              genderColor={g.genderColor}
+              genderText={g.description}
+              genderPercent={g.admitted + " %"}
+              genderColor={g.color}
             />
           </div>
         ))}
