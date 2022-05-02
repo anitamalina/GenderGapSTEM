@@ -20,23 +20,7 @@ function App() {
       
   return (
     <>
-    <div className="genderInfo">
-      {data.map((g) => (
-        <div className="genderText">
-        <GenderInfo genderText={g.genderText} genderPercent={g.genderPercent + ' %'} genderColor={g.genderColor} />
-        </div>
-      ))}
-    </div>
-    <UpdateGenderBtn action={goToPage}/>
-    <p className="timer">{timer}</p>
-      <div className="p5-sketch">
-        <Visuals setSrc={setSrc}/>
-      </div>
-    <Canvas className="canvas" >
-      <OrbitControls />
-      <Stars />
-      <Sphere position={[0, 0, 0]} src={src}/>
-    </Canvas>
+   
     </>
   );
 }
