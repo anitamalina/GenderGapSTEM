@@ -46,7 +46,7 @@ code {
   border-radius: 20px;
   transition: 0.3s;
   cursor: pointer;
-  z-index: 98;
+  z-index: 102;
 }
 
 p {
