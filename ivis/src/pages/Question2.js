@@ -7,7 +7,7 @@ import data from "./../data.json"
 
 import Visuals from "../components/Visuals";
 import Sphere from "../components/Sphere";
-import ControlBoard from "../components/update-gender-components/ControlBoard"
+import IdentityControlBoard from "../components/update-gender-components/IdentityControlBoard"
 
 export default function Question2(props) {
   const [src, setSrc] = useState();
@@ -20,7 +20,7 @@ export default function Question2(props) {
 
   return (
     <>
-      <ControlBoard questionTxt={"What gender do you want to be identified as at ITU?"} flowBtnTxt={"Make"} flowBtnAction={goToQuestion3} data={data}/>
+      <IdentityControlBoard questionTxt={"What gender do you want to be identified as at ITU?"} flowBtnTxt={"Make"} flowBtnAction={goToQuestion3} data={data} identifiedGender={props.identifiedGender} setIdentifiedGender={props.setIdentifiedGender}/>
       <div className="p5-sketch">
         <Visuals setSrc={setSrc} />
       </div>

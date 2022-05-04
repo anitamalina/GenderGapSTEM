@@ -244,6 +244,24 @@ text-transform: capitalize;
   color:black;
 }
 
+.confirmBtn {
+  background-color: rgba(196, 196, 196, 1);
+  border-radius: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 170px;
+  height: 50px;
+  justify-content: center;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
 .flowNav {
   display: flex;
   justify-content: center;

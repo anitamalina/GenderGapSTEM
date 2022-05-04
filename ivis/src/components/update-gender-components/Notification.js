@@ -1,9 +1,10 @@
 import React from "react";
 import "./../../myStyle.css";
-import FlowBtn from "./FlowBtn";
+import ConfirmBtn from "./ConfirmBtn"
+
 import image from "./../../images/checkmark.png"
 
-export default function Confirm({flowBtnAction}) {
+export default function Notification({confirmAction}) {
 
   return (
     <div className="thankyou">
@@ -12,8 +13,8 @@ export default function Confirm({flowBtnAction}) {
       <h5>Your registration is saved</h5>
       <p>You can now see your gender represented in the visualization.</p>
       <div className="flowNav">
-      <FlowBtn flowBtnTxt="OK" flowBtnAction={flowBtnAction}/>
+      <ConfirmBtn confirmTxt="OK" confirmAction={confirmAction} />
       </div>
     </div>
-  );
+  )
 }

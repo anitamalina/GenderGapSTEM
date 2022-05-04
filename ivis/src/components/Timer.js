@@ -22,5 +22,5 @@ export default function Timer(props) {
         return () => {
           clearInterval(timerID)
         }
-      }, [])
+      }, [clock])
 }

@@ -5,7 +5,7 @@ import { OrbitControls, Stars } from "@react-three/drei";
 
 import Visuals from "../components/Visuals";
 import Sphere from "../components/Sphere";
-import Confirm from "../components/update-gender-components/Confirm";
+import Notification from "../components/update-gender-components/Notification";
 
 export default function Confirmation(props) {
   const [src, setSrc] = useState();
@@ -17,7 +17,7 @@ export default function Confirmation(props) {
 
   return (
     <>
-    <Confirm flowBtnAction={goToHome} />
+    <Notification confirmAction={goToHome} />
       <div className="p5-sketch">
         <Visuals setSrc={setSrc} />
       </div>

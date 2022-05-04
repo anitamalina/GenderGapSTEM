@@ -7,7 +7,7 @@ import data from "./../data.json"
 
 import Visuals from "../components/Visuals";
 import Sphere from "../components/Sphere";
-import ControlBoard from "./../components/update-gender-components/ControlBoard"
+import AssignControlBoard from "../components/update-gender-components/AssignControlBoard"
 
 export default function Question1(props) {
   const [src, setSrc] = useState()
@@ -20,7 +20,7 @@ export default function Question1(props) {
 
   return (
     <>
-      <ControlBoard questionTxt={"What gender are you assigned to at ITU?"} flowBtnTxt={"Next"} flowBtnAction={goToQuestion2} data={data} assignedGender={props.assignedGender} setAssignedGender={props.setAssignedGender}/>
+      <AssignControlBoard questionTxt={"What gender are you assigned to at ITU?"} flowBtnTxt={"Next"} flowBtnAction={goToQuestion2} data={data} assignedGender={props.assignedGender} setAssignedGender={props.setAssignedGender}/>
       <div className="p5-sketch">
         <Visuals setSrc={setSrc} />
       </div>

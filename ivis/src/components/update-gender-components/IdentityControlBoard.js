@@ -8,30 +8,30 @@ import "./../../myStyle.css";
 // import data from "./../data.json"
 // data is an array from the database which consist of an object with genderText, genderColor and id
 
-export default function ControlBoard({
+export default function IdentityControlBoard({
   questionTxt,
   flowBtnTxt,
   flowBtnAction,
   data,
-  assignedGender,
-  setAssignedGender
+  identifiedGender,
+  setIdentifiedGender
 }) {
 
-  useEffect(() => (console.log("useeffect")), [setAssignedGender, console.log("from arr assignedgender", assignedGender) && console.log("from arr checkedgender", checked)])
+  useEffect(() => (console.log("useeffect")), [setIdentifiedGender, console.log("from arr identifiedGender", identifiedGender) && console.log("from arr checkedgender", checked)])
   
   const [checked, setChecked] = useState("")
-  const [isActive, setIsActive] = useState()
+  const [isActive, setIsActive] = useState(false)
 
   function setStates(g) {
     console.log("setstates callsed")
-    setAssignedGender(g.genderText)
+    setIdentifiedGender(g.genderText)
     setChecked(g.genderText)
     setIsActive(true)
   }
 
 
   // if checked (if the user have selcted a gender)
- if (assignedGender !== "") return (
+ if (identifiedGender !== "") return (
   <div className="controlboard">
     <Question questionTxt={questionTxt} />
     <div className="genderLabels">
