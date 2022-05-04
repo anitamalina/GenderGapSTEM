@@ -1,9 +1,9 @@
 import React from "react";
-import "./../myStyle.css";
+import "./../../myStyle.css";
 import FlowBtn from "./FlowBtn";
-import image from "./../images/checkmark.png"
+import image from "./../../images/checkmark.png"
 
-export default function ThankYou({flowBtnAction}) {
+export default function Confirm({flowBtnAction}) {
 
   return (
     <div className="thankyou">

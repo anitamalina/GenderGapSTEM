@@ -3,13 +3,13 @@ import GenderLabels from "./GenderLabels";
 import FlowBtn from "./FlowBtn";
 import Question from "./Question"
 
-import "./../myStyle.css";
+import "./../../myStyle.css";
 
 // import data from "./../data.json"
 // data is an array from the database which consist of an object with genderText, genderColor and id
 
 
-export default function ControlBoard({questionTxt, flowBtnAction, data}) {
+export default function ControlBoard({questionTxt, flowBtnTxt, flowBtnAction, data}) {
   return (
     <div className="controlboard">
       <Question questionTxt={questionTxt}/>
@@ -24,7 +24,7 @@ export default function ControlBoard({questionTxt, flowBtnAction, data}) {
         ))}
       </div>
       <div className="flowNav">
-      <FlowBtn txt="Next" flowBtnAction={flowBtnAction}/>
+      <FlowBtn flowBtnTxt={flowBtnTxt} flowBtnAction={flowBtnAction}/>
       </div>
     </div>
   );

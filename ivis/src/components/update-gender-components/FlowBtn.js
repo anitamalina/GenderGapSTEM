@@ -1,5 +1,5 @@
 import React from "react";
-import './../myStyle.css'
+import "./../../myStyle.css";
 
 export default function FlowBtn({flowBtnTxt, flowBtnAction}) {
     return (

@@ -1,7 +1,7 @@
 import React from "react";
 
 // Styles
-import './../myStyle.css';
+import "./../../myStyle.css";
 
 
 const GenderLabels = ({ genderText, genderColor }) => {

@@ -1,6 +1,6 @@
-import './../myStyle.css'
+import "./../../myStyle.css";
 
-export default function flowBtn({questionTxt}) {
+export default function Question({questionTxt}) {
     return (
         <h3>{questionTxt}</h3>
     )

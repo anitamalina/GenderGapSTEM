@@ -11,12 +11,13 @@ import UpdateGenderBtn from "../components/UpdateGenderBtn";
 import Visuals from "../components/Visuals";
 import Sphere from "../components/Sphere";
 
-export default function Home() {
+export default function Home(props) {
   const [src, setSrc] = useState();
   const [timer, setTimer] = useState();
 
-  function showQuestion1() {
+  function goToQuestion1() {
     console.log("btn clickd!! ");
+    props.setQuestion1(true)
   }
 
   return (
@@ -34,7 +35,7 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <UpdateGenderBtn action={showQuestion1} />
+      <UpdateGenderBtn action={goToQuestion1} />
       <p className="timer">{timer}</p>
       <div className="p5-sketch">
         <Visuals setSrc={setSrc} />
