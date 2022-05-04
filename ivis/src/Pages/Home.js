@@ -125,12 +125,12 @@ export default function Home() {
       <Timer setTimer={setTimer} />
       <h1>Student Representation</h1>
       <div className="genderInfo">
-        {parseData.map((g) => (
+        {data.map((g) => (
           <div className="genderText">
             <GenderInfo
-              genderText={g.description}
-              genderPercent={g.admitted + " %"}
-              genderColor={g.color}
+              genderText={g.genderText}
+              genderPercent={g.genderPercent + " %"}
+              genderColor={g.genderColor}
             />
           </div>
         ))}
