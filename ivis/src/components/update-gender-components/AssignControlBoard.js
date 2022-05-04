@@ -12,15 +12,17 @@ export default function AssignControlBoard({
   questionTxt,
   flowBtnTxt,
   flowBtnAction,
+  flowBtnActionError,
   data,
   assignedGender,
-  setAssignedGender
+  setAssignedGender,
+  isActive,
+  setIsActive
 }) {
 
   useEffect(() => (console.log("useeffect")), [setAssignedGender, console.log("from arr assignedgender", assignedGender) && console.log("from arr checkedgender", checked)])
   
   const [checked, setChecked] = useState("")
-  const [isActive, setIsActive] = useState()
 
   function setStates(g) {
     console.log("setstates callsed")
@@ -60,9 +62,7 @@ export default function AssignControlBoard({
         )
       ))}
     </div>
-    <div className="flowNav">
-      <FlowBtn isActive={isActive} flowBtnTxt={flowBtnTxt} flowBtnAction={flowBtnAction} />
-    </div>
+      <FlowBtn isActive={isActive} flowBtnTxt={flowBtnTxt} flowBtnAction={flowBtnAction}/>
   </div>
   )
 
@@ -81,9 +81,7 @@ export default function AssignControlBoard({
         </div>
       ))}
     </div>
-    <div className="flowNav">
-      <FlowBtn flowBtnTxt={flowBtnTxt} flowBtnAction={flowBtnAction} />
-    </div>
+      <FlowBtn flowBtnTxt={flowBtnTxt} flowBtnAction={flowBtnAction} flowBtnActionError={flowBtnActionError} />
   </div>
   )
 

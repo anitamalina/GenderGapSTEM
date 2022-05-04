@@ -11,16 +11,21 @@ import AssignControlBoard from "../components/update-gender-components/AssignCon
 
 export default function Question1(props) {
   const [src, setSrc] = useState()
+  const [isActive, setIsActive] = useState(false)
 
   function goToQuestion2() {
-    console.log("next btn clickd!! ")
-    props.setQuestion2(true)
-    props.setQuestion1(false)
+    console.log("next btn clicked!! ")
+
+    if (isActive) return (
+        props.setQuestion2(true),
+        props.setQuestion1(false)
+    )    
   }
+
 
   return (
     <>
-      <AssignControlBoard questionTxt={"What gender are you assigned to at ITU?"} flowBtnTxt={"Next"} flowBtnAction={goToQuestion2} data={data} assignedGender={props.assignedGender} setAssignedGender={props.setAssignedGender}/>
+      <AssignControlBoard isActive={isActive} setIsActive={setIsActive} questionTxt={"What gender are you assigned to at ITU?"} flowBtnTxt={"Next"} flowBtnAction={goToQuestion2} data={data} assignedGender={props.assignedGender} setAssignedGender={props.setAssignedGender}/>
       <div className="p5-sketch">
         <Visuals setSrc={setSrc} />
       </div>

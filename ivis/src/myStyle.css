@@ -186,8 +186,6 @@ text-transform: capitalize;
   cursor: pointer;
 }
 
-
-
 .circle {
     height: 36px;
     width: 36px;
@@ -264,9 +262,17 @@ text-transform: capitalize;
 
 .flowNav {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding-top: 25px;
   padding-bottom: 25px;
+}
+
+.errorMessage {
+  color: white;
+  font-size: 10px;
+  padding-top: 5px;
 }
 
 .thankyou {

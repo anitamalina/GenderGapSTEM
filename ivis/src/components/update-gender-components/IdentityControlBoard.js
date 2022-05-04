@@ -60,9 +60,7 @@ export default function IdentityControlBoard({
         )
       ))}
     </div>
-    <div className="flowNav">
       <FlowBtn isActive={isActive} flowBtnTxt={flowBtnTxt} flowBtnAction={flowBtnAction} />
-    </div>
   </div>
   )
 
@@ -81,9 +79,7 @@ export default function IdentityControlBoard({
         </div>
       ))}
     </div>
-    <div className="flowNav">
       <FlowBtn flowBtnTxt={flowBtnTxt} flowBtnAction={flowBtnAction} />
-    </div>
   </div>
   )
 
