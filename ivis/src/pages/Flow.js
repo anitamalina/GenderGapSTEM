@@ -7,9 +7,9 @@ import data from "../data.json"
 
 import Visuals from "../components/Visuals";
 import Sphere from "../components/Sphere";
-import AssignControlBoard from "../components/update-gender-components/AssignControlBoard"
-import IdentityControlBoard from "../components/update-gender-components/IdentityControlBoard";
-import Notification from "../components/update-gender-components/Notification";
+import AssignControlBoard from "../components/flow-components/AssignControlBoard"
+import IdentityControlBoard from "../components/flow-components/IdentityControlBoard";
+import Notification from "../components/flow-components/Notification";
 
 export default function Flow(props) {
   const [src, setSrc] = useState()
