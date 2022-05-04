@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState, renderer} from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
 import { useNavigate } from "react-router-dom";
@@ -14,24 +14,18 @@ import Visuals from "../components/Visuals"
 import data from "../data.json"
 
 
-export default function Home({setSrc, src}) {
+export default function Flow({setSrc, src}) {
 
     const [timer, setTimer] = useState();
 
     const navigate = useNavigate();
 
     function goToPage() {
-      if(src != undefined){
-        console.log('src : '+ src) 
-        navigate("/flow")
-      }
+      navigate("/hej")
     }
 
     return (
         <>
-
-    <Timer setTimer={setTimer}/>
-    <h1>Student Representation</h1>
     <div className="genderInfo">
       {data.map((g) => (
         <div className="genderText">

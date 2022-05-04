@@ -1,7 +1,7 @@
 import "./../myStyle.css"
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
-import React, {useState, useNavigate} from "react";
+import React, {useState, useNavigate, useEffect} from "react";
 
 
 // components
@@ -11,7 +11,7 @@ import ControlBoard from "./../components/update-gender-components/ControlBoard"
 
 import data from "./../data.json"
 
-export default function UpdateGenderFlow(props) {
+export default function UpdateGenderFlow({setSrc, src}) {
 
   const initState = {
     currentQuestion: 2,
@@ -39,14 +39,14 @@ export default function UpdateGenderFlow(props) {
 
   return (
     <>
-      <ControlBoard questionTxt="What gender are you assigned to at ITU?" flowBtnTxt="Next" flowBtnAction={handleQuestionFlow} data={data} assignedGender={assignedGender} setAssignedGender={setAssignedGender}/>
+      {/* <ControlBoard questionTxt="What gender are you assigned to at ITU?" flowBtnTxt="Next" flowBtnAction={handleQuestionFlow} data={data} assignedGender={assignedGender} setAssignedGender={setAssignedGender}/> */}
       <div className="p5-sketch">
-        <Visuals setSrc={props.setSrc}/>
+        <Visuals setSrc={setSrc}/>
       </div>
     <Canvas className="canvas" >
       <OrbitControls />
       <Stars />
-      <Sphere position={[0, 0, 0]} src={props.src}/>
+      <Sphere position={[0, 0, 0]} src={src}/>
     </Canvas>
     </>
   );
