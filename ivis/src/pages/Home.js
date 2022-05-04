@@ -15,9 +15,9 @@ export default function Home(props) {
   const [src, setSrc] = useState();
   const [timer, setTimer] = useState();
 
-  function goToQuestion1() {
-    console.log("btn clickd!! ");
-    props.setQuestion1(true)
+  function startFlow() {
+    console.log("flow btn clickd!");
+    props.setFlow(true)
   }
 
   return (
@@ -35,7 +35,7 @@ export default function Home(props) {
           </div>
         ))}
       </div>
-      <UpdateGenderBtn action={goToQuestion1} />
+      <UpdateGenderBtn action={startFlow} />
       <p className="timer">{timer}</p>
       <div className="p5-sketch">
         <Visuals setSrc={setSrc} />

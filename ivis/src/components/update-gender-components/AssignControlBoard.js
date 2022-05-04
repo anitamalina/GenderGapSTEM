@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import GenderLabels from "./GenderLabels";
 import FlowBtn from "./FlowBtn";
 import Question from "./Question";
@@ -20,7 +20,7 @@ export default function AssignControlBoard({
   setIsActive
 }) {
 
-  useEffect(() => (console.log("useeffect")), [setAssignedGender, console.log("from arr assignedgender", assignedGender) && console.log("from arr checkedgender", checked)])
+  /* useEffect(() => (console.log("useeffect")), [setAssignedGender, console.log("from arr assignedgender", assignedGender) && console.log("from arr checkedgender", checked)]) */
   
   const [checked, setChecked] = useState("")
 

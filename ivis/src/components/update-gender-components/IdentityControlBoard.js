@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import GenderLabels from "./GenderLabels";
 import FlowBtn from "./FlowBtn";
 import Question from "./Question";
@@ -17,7 +17,7 @@ export default function IdentityControlBoard({
   setIdentifiedGender
 }) {
 
-  useEffect(() => (console.log("useeffect")), [setIdentifiedGender, console.log("from arr identifiedGender", identifiedGender) && console.log("from arr checkedgender", checked)])
+  /* useEffect(() => (console.log("useeffect")), [setIdentifiedGender, console.log("from arr identifiedGender", identifiedGender) && console.log("from arr checkedgender", checked)]) */
   
   const [checked, setChecked] = useState("")
   const [isActive, setIsActive] = useState(false)
