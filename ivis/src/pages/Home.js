@@ -1,9 +1,9 @@
-import "./../myStyle.css"
+import "./../myStyle.css";
 import React, { useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
 
-import data from "./../data.json"
+import data from "./../data.json";
 
 import Timer from "../components/Timer";
 import GenderInfo from "../components/GenderInfo";
@@ -11,13 +11,12 @@ import UpdateGenderBtn from "../components/UpdateGenderBtn";
 import Visuals from "../components/Visuals";
 import Sphere from "../components/Sphere";
 
-
 export default function Home() {
-    const [src, setSrc] = useState();
-    const [timer, setTimer] = useState();
+  const [src, setSrc] = useState();
+  const [timer, setTimer] = useState();
 
   function showQuestion1() {
-    console.log("btn clickd!! ")
+    console.log("btn clickd!! ");
   }
 
   return (
@@ -36,7 +35,6 @@ export default function Home() {
         ))}
       </div>
       <UpdateGenderBtn action={showQuestion1} />
-
       <p className="timer">{timer}</p>
       <div className="p5-sketch">
         <Visuals setSrc={setSrc} />
