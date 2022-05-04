@@ -160,6 +160,15 @@ text-transform: capitalize;
   padding-left: 20px;
 }
 
+.genderLabel-selected {
+  display: flex;
+  align-items: center;
+  background: rgba(196, 196, 196, 0.35);
+  border-radius: 42px;
+  width: 259px;
+  height: 50px;
+}
+
 .genderlabel {
   display: flex;
   align-items: center;
@@ -176,6 +185,8 @@ text-transform: capitalize;
   height: 50px;
   cursor: pointer;
 }
+
+
 
 .circle {
     height: 36px;
@@ -210,6 +221,23 @@ text-transform: capitalize;
   height: 50px;
   justify-content: center;
   border: none;
+}
+
+.flowBtn-active {
+  background-color: rgba(196, 196, 196, 1);
+  border-radius: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 170px;
+  height: 50px;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
 }
 
 .flowBtnTxt {

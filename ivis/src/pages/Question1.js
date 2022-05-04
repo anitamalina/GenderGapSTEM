@@ -10,17 +10,17 @@ import Sphere from "../components/Sphere";
 import ControlBoard from "./../components/update-gender-components/ControlBoard"
 
 export default function Question1(props) {
-  const [src, setSrc] = useState();
+  const [src, setSrc] = useState()
 
   function goToQuestion2() {
-    console.log("next btn clickd!! ");
+    console.log("next btn clickd!! ")
     props.setQuestion2(true)
     props.setQuestion1(false)
   }
 
   return (
     <>
-      <ControlBoard questionTxt={"What gender are you assigned to at ITU?"} flowBtnTxt={"Next"} flowBtnAction={goToQuestion2} data={data}/>
+      <ControlBoard questionTxt={"What gender are you assigned to at ITU?"} flowBtnTxt={"Next"} flowBtnAction={goToQuestion2} data={data} assignedGender={props.assignedGender} setAssignedGender={props.setAssignedGender}/>
       <div className="p5-sketch">
         <Visuals setSrc={setSrc} />
       </div>
