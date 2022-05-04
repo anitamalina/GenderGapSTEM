@@ -14,8 +14,8 @@ export default function Question2(props) {
 
   function goToQuestion3() {
     console.log("next btn clickd!! ");
-    props.setQuestion3(true)
     props.setQuestion2(false)
+    props.setQuestionConfirm(true)
   }
 
   return (
