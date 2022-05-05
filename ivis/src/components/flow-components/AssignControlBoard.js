@@ -12,7 +12,6 @@ export default function AssignControlBoard({
   questionTxt,
   flowBtnTxt,
   flowBtnAction,
-  flowBtnActionError,
   data,
   assignedGender,
   setAssignedGender,
@@ -81,7 +80,7 @@ export default function AssignControlBoard({
         </div>
       ))}
     </div>
-      <FlowBtn flowBtnTxt={flowBtnTxt} flowBtnAction={flowBtnAction} flowBtnActionError={flowBtnActionError} />
+      <FlowBtn flowBtnTxt={flowBtnTxt} flowBtnAction={flowBtnAction} />
   </div>
   )
 
