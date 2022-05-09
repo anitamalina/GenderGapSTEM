@@ -1,9 +1,10 @@
 import React from "react";
-import "./../myStyle.css";
-import FlowBtn from "./FlowBtn";
-import image from "./../images/checkmark.png"
+import "./../../myStyle.css";
+import ConfirmBtn from "./ConfirmBtn"
 
-export default function ThankYou({flowBtnAction}) {
+import image from "./../../images/checkmark.png"
+
+export default function Notification({confirmAction}) {
 
   return (
     <div className="thankyou">
@@ -12,8 +13,8 @@ export default function ThankYou({flowBtnAction}) {
       <h5>Your registration is saved</h5>
       <p>You can now see your gender represented in the visualization.</p>
       <div className="flowNav">
-      <FlowBtn flowBtnTxt="OK" flowBtnAction={flowBtnAction}/>
+      <ConfirmBtn confirmTxt="OK" confirmAction={confirmAction} />
       </div>
     </div>
-  );
+  )
 }

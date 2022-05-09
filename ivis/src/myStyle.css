@@ -46,7 +46,7 @@ code {
   border-radius: 20px;
   transition: 0.3s;
   cursor: pointer;
-  z-index: 98;
+  z-index: 102;
 }
 
 p {
@@ -74,8 +74,6 @@ h1 {
 
 h3 {
   color: white;
-  width: 277px;
-  height: 80px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
@@ -84,6 +82,7 @@ h3 {
   display: flex;
   align-items: center;
   text-align: center;
+  padding: 20px;
 }
 
 h4 {
@@ -161,6 +160,15 @@ text-transform: capitalize;
   padding-left: 20px;
 }
 
+.genderLabel-selected {
+  display: flex;
+  align-items: center;
+  background: rgba(196, 196, 196, 0.35);
+  border-radius: 42px;
+  width: 259px;
+  height: 50px;
+}
+
 .genderlabel {
   display: flex;
   align-items: center;
@@ -213,15 +221,58 @@ text-transform: capitalize;
   border: none;
 }
 
+.flowBtn-active {
+  background-color: rgba(196, 196, 196, 1);
+  border-radius: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 170px;
+  height: 50px;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
 .flowBtnTxt {
   color:black;
 }
 
+.confirmBtn {
+  background-color: rgba(196, 196, 196, 1);
+  border-radius: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 170px;
+  height: 50px;
+  justify-content: center;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
 .flowNav {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding-top: 25px;
   padding-bottom: 25px;
+}
+
+.errorMessage {
+  color: white;
+  font-size: 10px;
+  padding-top: 5px;
 }
 
 .thankyou {

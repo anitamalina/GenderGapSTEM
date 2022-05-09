@@ -1,21 +1,14 @@
 import "./myStyle.css";
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home"
 
+import Home from "./pages/Home";
+import Flow from "./pages/Flow";
 
-function App() {
-      
-  return (
-    <>
-
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home/>}></Route>
-      </Routes>
-    </Router>
-    </>
-  );
+export default function App() {
+  const [assignedGender, setAssignedGender] = useState("");
+  const [identifiedGender, setIdentifiedGender] = useState("");
+  const [flow, setFlow] = useState(false);
+  
+  if (flow) return (<Flow setFlow={setFlow} assignedGender={assignedGender} setAssignedGender={setAssignedGender} identifiedGender={identifiedGender} setIdentifiedGender={setIdentifiedGender} /> )
+  else return (<Home setFlow={setFlow} />)
 }
-
-export default App;
