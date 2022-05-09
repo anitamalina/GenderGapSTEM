@@ -1,7 +1,8 @@
 import "./../myStyle.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
+import Parse from "parse";
 
 import data from "./../data.json";
 
@@ -14,23 +15,44 @@ import Sphere from "../components/Sphere";
 export default function Home(props) {
   const [src, setSrc] = useState();
   const [timer, setTimer] = useState();
+  const [parsedData, setData] = useState();
+
+  useEffect(()=>{
+    getGenders().then((data)=>setData(data));
+  },[]);
 
   function startFlow() {
     console.log("flow btn clickd!");
-    props.setFlow(true)
+    props.setFlow(true);
   }
 
-  return (
+  async function getGenders() {
+    let genderArray = [];
+    let query = new Parse.Query("gender_itu");
+
+    try {
+      let genders = await query.find();
+
+      genders.forEach((gender) => {
+        genderArray.push(gender);
+      });
+      return genderArray;
+    } catch (error) {}
+  }
+
+  if(!parsedData){
+    return <div><p>Loading</p></div>
+  } else return (
     <>
       <Timer setTimer={setTimer} />
       <h1>Student Representation</h1>
       <div className="genderInfo">
-        {data.map((g) => (
+        {parsedData.map((g) => (
           <div className="genderText">
             <GenderInfo
-              genderText={g.genderText}
-              genderPercent={g.genderPercent + " %"}
-              genderColor={g.genderColor}
+              genderText={g.get("gender_description")}
+              genderPercent={g.get("admitted") + " %"}
+              genderColor={g.get("color")}
             />
           </div>
         ))}
@@ -38,7 +60,7 @@ export default function Home(props) {
       <UpdateGenderBtn action={startFlow} />
       <p className="timer">{timer}</p>
       <div className="p5-sketch">
-        <Visuals setSrc={setSrc} />
+        <Visuals setSrc={setSrc} data={parsedData}/>
       </div>
       <Canvas className="canvas">
         <OrbitControls />

@@ -1,27 +1,40 @@
 import React from "react";
 import Sketch from "react-p5";
 
-export default function Visuals({setSrc}) {
+export default function Visuals({setSrc, data}) {
 
   const setup = (p5, canvasParentRef, canvas) => {
     p5.createCanvas(600, 400).parent(canvasParentRef);
   };
 
+  function destructure(input){
+    let genderSquare= {
+      rectHeight: (400*input.get("admitted"))/100,
+      color: input.get("color")
+    }
+    return genderSquare;
+  }
+
+  const squareArray = data.map(destructure);
+
   const draw = (p5) => {
     p5.background(220);
-    let numbersOfGenders = [25, 50];
-    for (let i = 0; i < numbersOfGenders.length; i++) {
-      let rect_height = (400 * numbersOfGenders[i]) / 100;
+    //let numbersOfGenders = [25, 50];
+    console.log("From Visuals", squareArray)
+    let sumHeight = 0;
+    for (let i = 0; i < squareArray.length; i++) {
 
       if (i === 0) {
-        p5.fill("red");
+        p5.fill(squareArray[i].color);
         p5.noStroke();
-        p5.rect(0, 0, 600, rect_height);
+        p5.rect(0, 0, 600, squareArray[i].rectHeight);
+        sumHeight += squareArray[i].rectHeight;
         
       } else {
-        let y = (400 * numbersOfGenders[i - 1]) / 100;
-        p5.fill("yellow");
-        p5.rect(0, y, 600, rect_height);
+        p5.fill(squareArray[i].color);
+        p5.rect(0, sumHeight, 600, squareArray[i].rectHeight);
+        sumHeight += squareArray[i].rectHeight;
+
       }
     }
     
