@@ -23,10 +23,10 @@ export default function IdentityControlBoard({
   const [isActive, setIsActive] = useState(false)
 
   function setStates(g) {
-    console.log("setstates callsed")
-    setIdentifiedGender(g.genderText)
-    setChecked(g.genderText)
-    setIsActive(true)
+    console.log("setstates callsed");
+    setIdentifiedGender(g.description);
+    setChecked(g.description);
+    setIsActive(true);
   }
 
 
@@ -38,12 +38,12 @@ export default function IdentityControlBoard({
       {/* look if one which is checked */}
       {data.map((g) => (
         // if one is checked
-        (checked === g.genderText) ? (
+        (checked === g.description) ? (
           <div className="genderLabel-selected">
           <div className="genderText" key={g.id}>
           <GenderLabels
-            genderText={g.genderText}
-            genderColor={g.genderColor}
+            genderText={g.description}
+            genderColor={g.color}
             selectGender={() => setStates(g)}
           />
         </div>
@@ -52,8 +52,8 @@ export default function IdentityControlBoard({
         ) : (
           <div className="genderText" key={g.id}>
           <GenderLabels
-            genderText={g.genderText}
-            genderColor={g.genderColor}
+            genderText={g.description}
+            genderColor={g.color}
             selectGender={() => setStates(g)}
           />
         </div>  
@@ -72,8 +72,8 @@ export default function IdentityControlBoard({
       {data.map((g) => (
         <div className="genderText" key={g.id}>
           <GenderLabels
-            genderText={g.genderText}
-            genderColor={g.genderColor}
+            genderText={g.description}
+            genderColor={g.color}
             selectGender={() => setStates(g)}
           />
         </div>

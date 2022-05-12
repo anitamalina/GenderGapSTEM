@@ -1,6 +1,8 @@
 import React from "react";
 import Sketch from "react-p5";
 
+import { getPercentage } from "../percentage";
+
 export default function Visuals({setSrc, data}) {
 
   const setup = (p5, canvasParentRef, canvas) => {
@@ -8,9 +10,10 @@ export default function Visuals({setSrc, data}) {
   };
 
   function destructure(input){
+    let percentage = getPercentage(input, data);
     let genderSquare= {
-      rectHeight: (400*input.get("admitted"))/100,
-      color: input.get("color")
+      rectHeight: (400*percentage)/100,
+      color: input.color
     }
     return genderSquare;
   }

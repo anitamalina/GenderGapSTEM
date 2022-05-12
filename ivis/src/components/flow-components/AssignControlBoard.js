@@ -25,8 +25,8 @@ export default function AssignControlBoard({
 
   function setStates(g) {
     console.log("setstates callsed")
-    setAssignedGender(g.genderText)
-    setChecked(g.genderText)
+    setAssignedGender(g.description)
+    setChecked(g.description)
     setIsActive(true)
   }
 
@@ -38,14 +38,14 @@ export default function AssignControlBoard({
     <div className="genderLabels">
       {/* look if one which is checked */}
       {data.map((g) => (
-        (g.genderPercent === 0) ? (<></>) :
+        (g.admitted === 0) ? (<></>) :
          // if one is checked
-         ((checked === g.genderText) ? (
+         ((checked === g.description) ? (
           <div className="genderLabel-selected">
           <div className="genderText" key={g.id}>
           <GenderLabels
-            genderText={g.genderText}
-            genderColor={g.genderColor}
+            genderText={g.description}
+            genderColor={g.color}
             selectGender={() => setStates(g)}
           />
         </div>
@@ -54,8 +54,8 @@ export default function AssignControlBoard({
         ) : (
           <div className="genderText" key={g.id}>
           <GenderLabels
-            genderText={g.genderText}
-            genderColor={g.genderColor}
+            genderText={g.description}
+            genderColor={g.color}
             selectGender={() => setStates(g)}
           />
         </div>  
@@ -73,11 +73,11 @@ export default function AssignControlBoard({
     <Question questionTxt={questionTxt} />
     <div className="genderLabels">
       {data.map((g) => (
-        (g.genderPercent === 0) ? (<></>) : 
+        (g.admitted === 0) ? (<></>) : 
         <div className="genderText" key={g.id}>
           <GenderLabels
-            genderText={g.genderText}
-            genderColor={g.genderColor}
+            genderText={g.description}
+            genderColor={g.color}
             selectGender={() => setStates(g)}
           />
         </div>

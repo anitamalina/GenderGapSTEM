@@ -1,6 +1,6 @@
 import "./../myStyle.css";
 import React, { useState } from "react";
-import dataJson from "../data.json";
+//import dataJson from "../data.json";
 
 import Visuals from "../components/Visuals";
 import AssignControlBoard from "../components/flow-components/AssignControlBoard";
@@ -13,10 +13,16 @@ export default function Flow(props) {
   const [isActive, setIsActive] = useState(false);
   const [question2, setQuestion2] = useState(false);
   const [questionConfirm, setQuestionConfirm] = useState(false);
+  const [assignedGender, setAssignedGender] = useState("");
+  const [identifiedGender, setIdentifiedGender] = useState("");
 
   function goToQuestion2() {
     console.log("next btn clicked!! ");
     if (isActive) return setQuestion2(true);
+  }
+
+  async function updateGendersinDB(){
+
   }
 
   function goToQuestionConfirm() {
@@ -51,9 +57,9 @@ export default function Flow(props) {
           questionTxt={"What gender do you want to be identified as at ITU?"}
           flowBtnTxt={"Make"}
           flowBtnAction={goToQuestionConfirm}
-          data={dataJson}
-          identifiedGender={props.identifiedGender}
-          setIdentifiedGender={props.setIdentifiedGender}
+          data={props.data}
+          identifiedGender={identifiedGender}
+          setIdentifiedGender={setIdentifiedGender}
         />
         <div className="p5-sketch">
           <Visuals setSrc={setSrc} data={props.data} />
@@ -71,9 +77,9 @@ export default function Flow(props) {
           questionTxt={"What gender are you assigned to at ITU?"}
           flowBtnTxt={"Next"}
           flowBtnAction={goToQuestion2}
-          data={dataJson}
-          assignedGender={props.assignedGender}
-          setAssignedGender={props.setAssignedGender}
+          data={props.data}
+          assignedGender={assignedGender}
+          setAssignedGender={setAssignedGender}
         />
         <div className="p5-sketch">
           <Visuals setSrc={setSrc} data={props.data} />

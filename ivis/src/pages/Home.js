@@ -7,6 +7,8 @@ import UpdateGenderBtn from "../components/UpdateGenderBtn";
 import FullCanvas from "../components/FullCanvas";
 import Visuals from "../components/Visuals";
 
+import { getPercentage } from "../percentage";
+
 export default function Home(props) {
   const [src, setSrc] = useState();
   const [timer, setTimer] = useState();
@@ -22,14 +24,14 @@ export default function Home(props) {
       <h1>Student Representation</h1>
       <div className="genderInfo">
         {props.data.map((g) => (
-          (g.genderPercent === 0) ? (
+          (g.admitted === 0) ? (
           <></>
           ) : (
         <div className="genderText">
             <GenderInfo
-              genderText={g.get("gender_description")}
-              genderPercent={g.get("admitted") + " %"}
-              genderColor={g.get("color")}
+              genderText= {g.description}
+              genderPercent={getPercentage(g, props.data) + "%"}
+              genderColor={g.color}
             />
           </div>
         )))}

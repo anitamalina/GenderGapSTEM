@@ -5,16 +5,21 @@ import Home from "./pages/Home";
 import Flow from "./pages/Flow";
 import Parse from "parse";
 
+import {getPercentage} from './percentage';
+
 export default function App() {
-  const [assignedGender, setAssignedGender] = useState("");
-  const [identifiedGender, setIdentifiedGender] = useState("");
   const [flow, setFlow] = useState(false);
   const [data, setData] = useState();
 
     useEffect(() => {
     getGenders().then((genders) => setData(genders));
+    console.log(data);
     }, []);
 
+    /*  useEffect(() => {
+    getGenders().then((genders) => setData(genders));
+    console.log(data);
+    }, []); */
 
    async function getGenders() {
     let genderArray = [];
@@ -24,10 +29,20 @@ export default function App() {
       let genders = await query.find();
 
       genders.forEach((gender) => {
-        genderArray.push(gender);
+        genderArray.push(desctructure(gender));
       });
       return genderArray;
     } catch (error) {}
+  }
+
+  function desctructure(g){
+    let genderObject = {
+      id: g.id,
+      description: g.get('gender_description'),
+      color: g.get('color'),
+      admitted: g.get('admitted')
+    }
+    return genderObject;
   }
 
   if (!data) {
@@ -40,10 +55,6 @@ export default function App() {
     return (
       <Flow
         setFlow={setFlow}
-        assignedGender={assignedGender}
-        setAssignedGender={setAssignedGender}
-        identifiedGender={identifiedGender}
-        setIdentifiedGender={setIdentifiedGender}
         data={data}
       />
     );
