@@ -1,6 +1,7 @@
 {
   "name": "ivis",
   "version": "0.1.0",
+  "homepage": "http://anitamalina.github.io/GenderGapSTEM",
   "private": true,
   "dependencies": {
     "@react-three/drei": "^9.1.2",
@@ -43,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
