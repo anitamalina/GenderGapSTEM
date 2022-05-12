@@ -13,7 +13,7 @@ export default function Sphere({src, setSrc}) {
     <>
       <mesh visible castShadow ref={ref}>
         <sphereGeometry attach="geometry" args={[2, 32, 32]} />
-        <meshStandardMaterial map={base} color="white" />
+        <meshStandardMaterial map={base} color="white" roughness={0.4}  metalness={0.2} />
       </mesh>
     </>
   );
