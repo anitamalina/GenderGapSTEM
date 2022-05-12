@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/GenderGapSTEM/static/css/main.f6d7557d.css",
+    "main.js": "/GenderGapSTEM/static/js/main.12b0dce6.js",
+    "static/media/checkmark.png": "/GenderGapSTEM/static/media/checkmark.e616059702b487f3f7d6.png",
+    "index.html": "/GenderGapSTEM/index.html",
+    "main.f6d7557d.css.map": "/GenderGapSTEM/static/css/main.f6d7557d.css.map",
+    "main.12b0dce6.js.map": "/GenderGapSTEM/static/js/main.12b0dce6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f6d7557d.css",
+    "static/js/main.12b0dce6.js"
+  ]
+}
