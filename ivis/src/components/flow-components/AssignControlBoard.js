@@ -38,8 +38,9 @@ export default function AssignControlBoard({
     <div className="genderLabels">
       {/* look if one which is checked */}
       {data.map((g) => (
-        // if one is checked
-        (checked === g.genderText) ? (
+        (g.genderPercent === 0) ? (<></>) :
+         // if one is checked
+         ((checked === g.genderText) ? (
           <div className="genderLabel-selected">
           <div className="genderText" key={g.id}>
           <GenderLabels
@@ -58,7 +59,8 @@ export default function AssignControlBoard({
             selectGender={() => setStates(g)}
           />
         </div>  
-        )
+        ))
+       
       ))}
     </div>
       <FlowBtn isActive={isActive} flowBtnTxt={flowBtnTxt} flowBtnAction={flowBtnAction}/>
@@ -71,6 +73,7 @@ export default function AssignControlBoard({
     <Question questionTxt={questionTxt} />
     <div className="genderLabels">
       {data.map((g) => (
+        (g.genderPercent === 0) ? (<></>) : 
         <div className="genderText" key={g.id}>
           <GenderLabels
             genderText={g.genderText}

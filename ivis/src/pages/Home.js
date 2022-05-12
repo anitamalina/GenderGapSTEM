@@ -26,14 +26,17 @@ export default function Home(props) {
       <h1>Student Representation</h1>
       <div className="genderInfo">
         {data.map((g) => (
-          <div className="genderText">
+          (g.genderPercent === 0) ? (
+          <></>
+          ) : (
+        <div className="genderText">
             <GenderInfo
               genderText={g.genderText}
               genderPercent={g.genderPercent + " %"}
               genderColor={g.genderColor}
             />
           </div>
-        ))}
+        )))}
       </div>
       <UpdateGenderBtn action={startFlow} />
       <p className="timer">{timer}</p>
