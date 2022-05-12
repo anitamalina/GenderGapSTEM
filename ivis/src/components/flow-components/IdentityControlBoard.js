@@ -24,7 +24,7 @@ export default function IdentityControlBoard({
 
   function setStates(g) {
     console.log("setstates callsed");
-    setIdentifiedGender(g.description);
+    setIdentifiedGender(g);
     setChecked(g.description);
     setIsActive(true);
   }

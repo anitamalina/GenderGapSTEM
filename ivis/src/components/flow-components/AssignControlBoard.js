@@ -25,7 +25,7 @@ export default function AssignControlBoard({
 
   function setStates(g) {
     console.log("setstates callsed")
-    setAssignedGender(g.description)
+    setAssignedGender(g)
     setChecked(g.description)
     setIsActive(true)
   }

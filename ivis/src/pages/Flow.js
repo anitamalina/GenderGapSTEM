@@ -1,5 +1,6 @@
 import "./../myStyle.css";
 import React, { useState } from "react";
+import Parse from "parse";
 //import dataJson from "../data.json";
 
 import Visuals from "../components/Visuals";
@@ -18,15 +19,32 @@ export default function Flow(props) {
 
   function goToQuestion2() {
     console.log("next btn clicked!! ");
+    console.log(assignedGender);
     if (isActive) return setQuestion2(true);
   }
 
-  async function updateGendersinDB(){
+  async function updateGendersinDB(assignedG, identifiedG) {
+    const genderObjects = Parse.Object.extend("gender_itu");
+    const query = new Parse.Query(genderObjects);
+    const updatedAssigned = assignedG.admitted -1;
+    const updatedIdentified = identifiedG.admitted +1;
+    console.log("updated admission: ", updatedAssigned);
 
+
+    try {
+      const assignedGender = await query.get(assignedG.id);
+      assignedGender.set('admitted', updatedAssigned).save();
+      const IdentifiedGender = await query.get(identifiedG.id);
+      IdentifiedGender.set('admitted', updatedIdentified).save();
+    } catch (error) {
+      alert("Failed to update admissions in DB: " + error.message);
+    }
   }
 
   function goToQuestionConfirm() {
-    console.log("next btn clickd!! ");
+    console.log("make btn clickd!! ");
+    console.log("identified genderID",identifiedGender);
+    updateGendersinDB(assignedGender, identifiedGender);
     setQuestion2(false);
     setQuestionConfirm(true);
   }
