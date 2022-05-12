@@ -301,3 +301,13 @@ text-transform: capitalize;
   left: 0;
   right: 0;
 }
+
+.load-screen{
+  background-color: black;
+  color: white;
+  font-weight: bolder;
+  font-size: x-large;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
