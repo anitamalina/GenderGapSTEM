@@ -21,15 +21,18 @@ export default function Home(props) {
       <Timer setTimer={setTimer} />
       <h1>Student Representation</h1>
       <div className="genderInfo">
-        {props.data.map((g) => (
-          <div className="genderText">
+        {data.map((g) => (
+          (g.genderPercent === 0) ? (
+          <></>
+          ) : (
+        <div className="genderText">
             <GenderInfo
               genderText={g.get("gender_description")}
               genderPercent={g.get("admitted") + " %"}
               genderColor={g.get("color")}
             />
           </div>
-        ))}
+        )))}
       </div>
       <UpdateGenderBtn action={startFlow} />
       <p className="timer">{timer}</p>
