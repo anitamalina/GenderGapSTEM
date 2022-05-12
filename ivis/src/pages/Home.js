@@ -22,6 +22,7 @@ export default function Home(props) {
     <>
       <Timer setTimer={setTimer} />
       <h1>Student Representation</h1>
+      <h2>The IT University of Copenhagen, Admission Year 2020</h2>
       <div className="genderInfo">
         {props.data.map((g) => (
           (g.admitted === 0) ? (
