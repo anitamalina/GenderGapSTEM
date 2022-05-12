@@ -21,7 +21,7 @@ export default function Home(props) {
       <Timer setTimer={setTimer} />
       <h1>Student Representation</h1>
       <div className="genderInfo">
-        {data.map((g) => (
+        {props.data.map((g) => (
           (g.genderPercent === 0) ? (
           <></>
           ) : (
