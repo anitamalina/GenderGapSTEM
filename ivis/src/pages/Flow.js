@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Parse from "parse";
 //import dataJson from "../data.json";
 
+import {getGenders} from '../App';
+
 import Visuals from "../components/Visuals";
 import AssignControlBoard from "../components/flow-components/AssignControlBoard";
 import IdentityControlBoard from "../components/flow-components/IdentityControlBoard";
@@ -51,6 +53,7 @@ export default function Flow(props) {
 
   function goToHome() {
     console.log("OK btn clickd!! ");
+    getGenders().then((genders) => props.setData(genders));
     setQuestionConfirm(false);
     props.setFlow(false);
   }

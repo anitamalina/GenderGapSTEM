@@ -3,7 +3,7 @@ export function getPercentage(gender, data){
 
    let allAdmitted = getAllAdmitted(data);
    let percentage = (gender.admitted/allAdmitted)*100;
-   percentage = Math.round(percentage);
+   percentage = percentage.toFixed(1);
    return percentage;
 }
 

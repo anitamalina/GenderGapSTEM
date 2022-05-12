@@ -5,23 +5,7 @@ import Home from "./pages/Home";
 import Flow from "./pages/Flow";
 import Parse from "parse";
 
-import {getPercentage} from './percentage';
-
-export default function App() {
-  const [flow, setFlow] = useState(false);
-  const [data, setData] = useState();
-
-    useEffect(() => {
-    getGenders().then((genders) => setData(genders));
-    console.log(data);
-    }, []);
-
-    /*  useEffect(() => {
-    getGenders().then((genders) => setData(genders));
-    console.log(data);
-    }, []); */
-
-   async function getGenders() {
+export async function getGenders() {
     let genderArray = [];
     let query = new Parse.Query("gender_itu");
 
@@ -45,6 +29,20 @@ export default function App() {
     return genderObject;
   }
 
+export default function App() {
+  const [flow, setFlow] = useState(false);
+  const [data, setData] = useState();
+
+    useEffect(() => {
+    getGenders().then((genders) => setData(genders));
+    console.log(data);
+    }, []);
+
+    /*  useEffect(() => {
+    getGenders().then((genders) => setData(genders));
+    console.log(data);
+    }, []); */
+
   if (!data) {
     return (
       <div className="load-screen">
@@ -55,6 +53,7 @@ export default function App() {
     return (
       <Flow
         setFlow={setFlow}
+        setData={setData}
         data={data}
       />
     );
