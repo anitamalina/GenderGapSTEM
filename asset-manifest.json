@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/GenderGapSTEM/static/css/main.eab1b895.css",
-    "main.js": "/GenderGapSTEM/static/js/main.ce895517.js",
+    "main.js": "/GenderGapSTEM/static/js/main.b70878a0.js",
     "static/media/checkmark.png": "/GenderGapSTEM/static/media/checkmark.e616059702b487f3f7d6.png",
     "index.html": "/GenderGapSTEM/index.html",
     "main.eab1b895.css.map": "/GenderGapSTEM/static/css/main.eab1b895.css.map",
-    "main.ce895517.js.map": "/GenderGapSTEM/static/js/main.ce895517.js.map"
+    "main.b70878a0.js.map": "/GenderGapSTEM/static/js/main.b70878a0.js.map"
   },
   "entrypoints": [
     "static/css/main.eab1b895.css",
-    "static/js/main.ce895517.js"
+    "static/js/main.b70878a0.js"
   ]
 }
