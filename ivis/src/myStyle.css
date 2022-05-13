@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black; 
+  background-color: black;
 }
 
 code {
@@ -19,12 +19,12 @@ code {
   z-index: 99;
 }
 
-.p5-sketch{
-  display:none;
+.p5-sketch {
+  display: none;
 }
 
 .updateGenderBtn {
-  position:absolute;
+  position: absolute;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -75,7 +75,7 @@ h1 {
 
 h2 {
   color: white;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -93,7 +93,7 @@ h2 {
 
 h3 {
   color: white;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -118,10 +118,10 @@ h5 {
   color: white;
   text-align: center;
   font-style: normal;
-font-weight: 500;
-font-size: 22px;
-line-height: 27px;
-margin: 0;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 27px;
+  margin: 0;
 }
 
 .timer {
@@ -140,10 +140,10 @@ margin: 0;
 
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-     -moz-user-select: none; /* Old versions of Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
 .genderInfo {
@@ -156,19 +156,19 @@ margin: 0;
 }
 
 .genderText {
-font-size: 25px;
-font-weight: 500;
-line-height: 48px;
-letter-spacing: 0em;
-text-transform: capitalize;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-transform: capitalize;
 }
 
 .controlboard {
   position: absolute;
   width: 300px;
-  height: 635px; 
+  height: 635px;
   left: 28px;
-  top: 39px; 
+  top: 39px;
   background-color: rgba(45, 45, 45, 1);
   border-radius: 10px;
   z-index: 101;
@@ -206,11 +206,11 @@ text-transform: capitalize;
 }
 
 .circle {
-    height: 36px;
-    width: 36px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-left: 8px;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 8px;
 }
 
 .labeltext {
@@ -258,7 +258,7 @@ text-transform: capitalize;
 }
 
 .flowBtnTxt {
-  color:black;
+  color: black;
 }
 
 .confirmBtn {
@@ -297,7 +297,7 @@ text-transform: capitalize;
 .thankyou {
   display: flex;
   flex-direction: column;
-  background: #2D2D2D;
+  background: #2d2d2d;
   border-radius: 20px;
   position: absolute;
   width: 300px;
@@ -321,7 +321,7 @@ text-transform: capitalize;
   right: 0;
 }
 
-.load-screen{
+.load-screen {
   background-color: black;
   color: white;
   font-weight: bolder;
