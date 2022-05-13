@@ -1,9 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './myStyle.css';
-import App from './App';
-import Parse from 'parse';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import "./myStyle.css";
+import App from "./App";
+import Parse from "parse";
 
 Parse.initialize(
   "FdZrqodDm8FvIXcka83uEeQroVywUAa3QXoca1nF",
@@ -12,10 +11,9 @@ Parse.initialize(
 
 Parse.serverURL = "https://parseapi.back4app.com/";
 
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

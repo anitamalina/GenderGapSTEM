@@ -1,6 +1,7 @@
 import React from "react";
 import Sketch from "react-p5";
 
+// Import functions
 import { getPercentage } from "../percentage";
 
 export default function Visuals({ setSrc, data }) {
