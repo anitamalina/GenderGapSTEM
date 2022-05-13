@@ -12,9 +12,8 @@ export default function Sphere({src, setSrc}) {
   return (
     <>
       <mesh visible castShadow ref={ref}>
-        <directionalLight intensity={0.5} />
         <sphereGeometry attach="geometry" args={[2, 32, 32]} />
-        <meshBasicMaterial map={base} color="white" />
+        <meshStandardMaterial map={base} color="white" roughness={0.4} metalness={0.2} />
       </mesh>
     </>
   );
